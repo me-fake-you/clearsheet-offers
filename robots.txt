@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://me-fake-you.github.io/clearsheet-offers/sitemap.xml

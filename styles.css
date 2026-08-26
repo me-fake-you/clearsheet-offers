@@ -27,6 +27,7 @@ nav { display: flex; align-items: center; gap: 24px; font-size: 14px; font-weigh
 .primary { background: var(--forest); color: white; box-shadow: 0 12px 28px rgba(23,79,58,.2); }
 .secondary { border: 1px solid #9aaba2; background: rgba(255,255,255,.62); }
 .trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 26px; margin-top: 30px; color: #53645c; font-size: 14px; }
+.language-link { display: inline-block; margin-top: 24px; color: #936613; font-weight: 800; }
 .offers,.process,.demo,.fit-check,.offer-detail,.case-section { padding: 96px clamp(22px,6vw,92px); }
 .offers,.fit-check,.offer-detail { background: var(--cream); }
 .section-heading { max-width: 740px; margin-bottom: 42px; }
