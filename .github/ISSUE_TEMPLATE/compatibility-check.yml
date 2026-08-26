@@ -1,0 +1,85 @@
+name: Free document compatibility check
+description: Ask whether a non-sensitive document format fits a small structured-Excel starter test.
+title: "[compatibility] "
+labels:
+  - business
+  - market-research
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a public form. Do not include or attach a real business document, customer name, address, invoice value, bank or tax data, shipment party, credential, identity document, or other sensitive/proprietary information. Describe structure only or use invented examples.
+  - type: dropdown
+    id: offer
+    attributes:
+      label: Document workflow
+      options:
+        - Invoices or bills to Excel
+        - Purchase orders or quotes to Excel
+        - Freight or logistics documents to Excel
+        - Another business document
+    validations:
+      required: true
+  - type: input
+    id: columns
+    attributes:
+      label: Required Excel columns
+      description: List field names only, such as invoice date, supplier, total, or booking reference. Do not include real values.
+      placeholder: "Example: document ID, date, supplier, currency, total"
+    validations:
+      required: true
+  - type: dropdown
+    id: batch_size
+    attributes:
+      label: Approximate first-test size
+      options:
+        - 1–5 documents
+        - 6–20 documents
+        - More than 20 documents
+    validations:
+      required: true
+  - type: dropdown
+    id: readability
+    attributes:
+      label: Typical readability
+      options:
+        - Mostly clear text
+        - Mixed scan quality
+        - Handwriting or damaged scans are common
+    validations:
+      required: true
+  - type: dropdown
+    id: tables
+    attributes:
+      label: Line-item tables
+      options:
+        - None or simple tables
+        - Mixed table layouts
+        - Complex multi-page tables
+    validations:
+      required: true
+  - type: dropdown
+    id: local_processing
+    attributes:
+      label: Is local processing important?
+      options:
+        - "Yes"
+        - "No"
+        - Unsure
+    validations:
+      required: true
+  - type: textarea
+    id: safe_context
+    attributes:
+      label: Optional non-sensitive context
+      description: Describe the current manual step or desired output without naming customers or sharing document contents.
+      placeholder: "Example: We manually copy five header fields into a weekly workbook."
+    validations:
+      required: false
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-data safety
+      options:
+        - label: I have not included or attached real customer data, sensitive business values, credentials, payment data, identity data, or proprietary documents.
+          required: true
