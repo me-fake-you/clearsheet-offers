@@ -10,6 +10,8 @@ ClearSheet is validating three small, fixed-scope starter services:
 
 [View the three offers](https://me-fake-you.github.io/clearsheet-offers/) · [中文服务说明](https://me-fake-you.github.io/clearsheet-offers/zh/) · [Run the private-in-browser compatibility check](https://me-fake-you.github.io/clearsheet-offers/compatibility-check/) · [Ask for a structure-only review](https://github.com/me-fake-you/clearsheet-offers/issues/new?template=compatibility-check.yml)
 
+Download the reviewed synthetic workbooks: [invoice / bills](https://me-fake-you.github.io/clearsheet-offers/downloads/clearsheet-invoice-demo-synthetic.xlsx) · [purchase orders / quotes](https://me-fake-you.github.io/clearsheet-offers/downloads/clearsheet-po-quote-demo-synthetic.xlsx) · [freight / logistics](https://me-fake-you.github.io/clearsheet-offers/downloads/clearsheet-freight-demo-synthetic.xlsx).
+
 Starter prices are experiments: **$10 / $20 / $30** and **¥29 / ¥49 / ¥99**. Exact scope and price are confirmed before payment.
 
 ## Privacy boundary

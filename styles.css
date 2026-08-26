@@ -29,6 +29,9 @@ nav { display: flex; align-items: center; gap: 24px; font-size: 14px; font-weigh
 .trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 26px; margin-top: 30px; color: #53645c; font-size: 14px; }
 .language-link { display: inline-block; margin-top: 24px; color: #936613; font-weight: 800; }
 .offers,.process,.demo,.fit-check,.offer-detail,.case-section { padding: 96px clamp(22px,6vw,92px); }
+.sample-download { padding: 0 clamp(22px,6vw,92px) 84px; background: #e9e2d3; }
+.sample-download p { max-width: 720px; margin: 0 0 18px; color: #59665f; font-size: 16px; line-height: 1.6; }
+.download-row { display: flex; flex-wrap: wrap; gap: 12px; }
 .offers,.fit-check,.offer-detail { background: var(--cream); }
 .section-heading { max-width: 740px; margin-bottom: 42px; }
 h2 { margin: 12px 0 16px; font-family: Georgia,"Times New Roman",serif; font-size: clamp(39px,5vw,66px); font-weight: 500; letter-spacing: -.045em; line-height: 1.02; }
@@ -91,4 +94,4 @@ h2 { margin: 12px 0 16px; font-family: Georgia,"Times New Roman",serif; font-siz
 footer { display: flex; justify-content: space-between; gap: 28px; padding: 34px clamp(22px,6vw,92px); border-top: 1px solid var(--line); color: #59665f; font-size: 13px; }
 footer div { display: grid; gap: 5px; } footer strong { color: var(--ink); }
 @media (max-width:900px){nav a:not(.nav-cta){display:none}.offer-grid,.price-grid,.scope-grid{grid-template-columns:1fr}.offer-card{min-height:auto}.process{grid-template-columns:1fr;gap:36px}.sheet-preview{overflow-x:auto}.sheet-row{min-width:720px}.deliverables{grid-template-columns:1fr}}
-@media (max-width:560px){.site-header{padding:14px 18px}.hero{min-height:620px;padding-top:90px}.hero-actions{width:100%}.button{width:100%}.offers,.process,.demo,.fit-check,.offer-detail,.case-section{padding:72px 20px}.subhero{padding:78px 20px 62px}footer{flex-direction:column}}
+@media (max-width:560px){.site-header{padding:14px 18px}.hero{min-height:620px;padding-top:90px}.hero-actions{width:100%}.button,.download-row .button{width:100%}.offers,.process,.demo,.fit-check,.offer-detail,.case-section{padding:72px 20px}.sample-download{padding:0 20px 64px}.subhero{padding:78px 20px 62px}footer{flex-direction:column}}
