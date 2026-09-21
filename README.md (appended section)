@@ -1,0 +1,8 @@
+## Low‑Ticket Direct Offers
+
+We’ve added a **Low‑Ticket Direct Offers** page that lets clients pay instantly with USDC and submit a verifiable receipt.
+
+- **Page:** `offers/low-ticket.html`
+- **Backend:** A tiny Express/TypeScript server (`server/`) records each submission to `data/offers.json`.  
+  Run it locally with:
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Low‑Ticket Direct Offers – ClearSheet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .container { max-width: 800px; margin: 2rem auto; padding: 1rem; }
+    .wallet { font-family: monospace; background:#f8f8f8; padding: .5rem; border-radius:4px; }
+    .form-group { margin-bottom: 1rem; }
+    label { display:block; margin-bottom:.3rem; }
+    input, textarea { width:100%; padding:.5rem; border:1px solid #ccc; border-radius:4px; }
+    button { background:#0066cc; color:#fff; border:none; padding:.7rem 1.2rem; border-radius:4px; cursor:pointer; }
+    button:hover { background:#004999; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Low‑Ticket Direct Offers</h1>
+    <p>
+      We’re focusing on verified cash‑flow opportunities that require no upfront spend.
+      Choose a low‑ticket service, pay instantly via USDC, and receive a measurable receipt.
+    </p>
+
+    <h2>Available Services</h2>
+    <ul>
+      <li><strong>Invoice to Excel</strong> – $45 per document</li>
+      <li><strong>Purchase Order Comparison</strong> – $55 per batch (up to 10 PO’s)</li>
+      <li><strong>Freight Sheet Standardisation</strong> – $65 per shipment</li>
+    </ul>
+
+    <h2>Pay with USDC</h2>
+    <p>
+      Send the exact amount to the USDC address below. Include your <em>order reference</em> in the transaction memo.
+    </p>
+    <p class="wallet" id="usdc-address">0xA1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q7r8S9t0</p>
+
+    <h2>Submit Your Order</h2>
+    <form id="order-form">
+      <div class="form-group">
+        <label for="service">Service</label>
+        <select id="service" name="service" required>
+          <option value="">Select a service</option>
+          <option value="Invoice to Excel">Invoice to Excel – $45</option>
+          <option value="Purchase Order Comparison">Purchase Order Comparison – $55</option>
+          <option value="Freight Sheet Standardisation">Freight Sheet Standardisation – $65</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Your Email (for receipt)</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="txHash">USDC Transaction Hash</label>
+        <input type="text" id="txHash" name="txHash" placeholder="0x..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Additional Notes (optional)</label>
+        <textarea id="notes" name="notes" rows="3"></textarea>
+      </div>
+
+      <button type="submit">Submit Order</button>
+    </form>
+
+    <p id="status" style="margin-top:1rem;"></p>
+  </div>
+
+  <script>
+    // Simple client‑side submission to our lightweight Express endpoint.
+    const form = document.getElementById('order-form');
+    const statusEl = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusEl.textContent = 'Submitting…';
+
+      const data = {
+        service: form.service.value,
+        email: form.email.value,
+        txHash: form.txHash.value,
+        notes: form.notes.value,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        const resp = await fetch('/api/offer', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (resp.ok) {
+          statusEl.textContent = '✅ Order received! You’ll get a receipt email shortly.';
+          form.reset();
+        } else {
+          const err = await resp.text();
+          statusEl.textContent = `❌ Failed: ${err}`;
+        }
+      } catch (err) {
+        statusEl.textContent = `❌ Network error: ${err}`;
+      }
+    });
+  </script>
+</body>
+</html>
