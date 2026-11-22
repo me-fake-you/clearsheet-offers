@@ -39,17 +39,17 @@ form.addEventListener('submit', (event) => {
     title.textContent = 'Likely fit for a small starter test';
     copy.textContent = 'Your document type, readability, and first-batch scope look compatible with a narrow Excel deliverable.';
     price.textContent = `Indicative starter-test tier: ${suggestedPrice}`;
-    next.textContent = 'Next: list the required columns in the public structure-only form. Do not attach files or include real customer, payment, identity, or proprietary data.';
+    next.textContent = 'Next: secure direct payment or USDC bounty via manual low-ticket offer. Do not attach files or include real customer, payment, identity, or proprietary data.';
   } else if (score >= 5) {
     title.textContent = 'Possible fit — review the format first';
     copy.textContent = 'The workflow may fit, but readability, table complexity, or unclear columns need a manual compatibility review before quoting.';
     price.textContent = `Indicative ceiling for the first test: ${suggestedPrice}`;
-    next.textContent = 'Next: use a synthetic or strongly redacted example to clarify the layout and desired output.';
+    next.textContent = 'Next: use a synthetic or strongly redacted example to clarify the layout and confirm verified cashflow terms.';
   } else {
     title.textContent = 'Not ready for a fixed-scope starter test';
     copy.textContent = 'The current format may require interpretation or a larger discovery step, so a low-cost fixed deliverable would be risky.';
     price.textContent = 'No price should be offered until the format is reviewed.';
-    next.textContent = 'Next: define the required columns and improve sample readability before requesting a quote.';
+    next.textContent = 'Next: define the required columns and focus strictly on verified revenue paths with zero upfront spend.';
   }
 
   result.classList.add('visible');
